@@ -1,3 +1,5 @@
+const inquirer = require('inquirer');
+
 async function init() {
     // Prompt the user for answers
     const answers = await inquirer.prompt(questions);
