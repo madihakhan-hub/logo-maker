@@ -107,7 +107,7 @@ function writeToFile(fileName, data) {
         if (err) {
             return console.log(err);
         }
-        console.log("Congratulations, you have Generated a logo.svg!");
+        console.log("You have Generated a logo.svg!");
     });
 }
 
@@ -169,8 +169,8 @@ async function init() {
 	console.log("Displaying shape:\n\n" + svgString);
 	//document.getElementById("svg_image").innerHTML = svgString;
 
-	console.log("Shape generation complete!");
-	console.log("Writing shape to file...");
+	console.log("Generated logo.svg");
+	console.log("Creating shape..");
 	writeToFile(svg_file, svgString); 
 }
 init()
