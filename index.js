@@ -1,5 +1,10 @@
 const filesystem = require('graceful-fs')
-const inquirer = require("inquirer");
+import('inquirer').then((inquirer) => {
+    // Use inquirer here...
+}).catch((error) => {
+    console.error("Error loading inquirer:", error);
+});
+
 const {Circle, Square, Triangle} = require("./lib/shapes");
 // Imports the graceful-fs, inquirer, Circle, Square, and Triangle modules.
 // Defines a Svg class that has a constructor with three methods for rendering and setting the text and shape elements in the SVG string.
@@ -56,7 +61,7 @@ function writeToFile(fileName, data) {
         if (err) {
             return console.log(err);
         }
-        console.log("You have Generated a logo.svg!");
+        console.log("You have generated a logo.svg!");
     });
 }
 
@@ -118,8 +123,8 @@ async function init() {
 	console.log("Displaying shape:\n\n" + svgString);
 	//document.getElementById("svg_image").innerHTML = svgString;
 
-	console.log("Generated logo.svg");
-	console.log("Creating shape..");
+	console.log("Shape generation complete!");
+	console.log("Creating shape");
 	writeToFile(svg_file, svgString); 
 }
 init()
